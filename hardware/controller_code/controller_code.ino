@@ -3,7 +3,7 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  // Demo of each command
   Serial.print("l-");
   delay(1000);
   Serial.print("r-");

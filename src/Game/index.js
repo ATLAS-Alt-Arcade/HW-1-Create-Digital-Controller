@@ -1,9 +1,8 @@
+// Import outside libraries
 const xs = require('xstream').default;
 const Phaser = require('phaser');
 
 const SerialProducer = require('./SerialProducer.js');
-// Have commands from arduino or parse packets on this end?
-// Lets use commands for this one and parse the packets in the next one
 
 // create serial port and open connection
 const serial = new SerialProducer();
@@ -20,6 +19,8 @@ function preload () {
 
 let player;
 let cursors;
+
+// Phaser setup
 function create () {
   cursors = this.input.keyboard.createCursorKeys();
 
@@ -101,7 +102,7 @@ const config = {
 
 const game = new Phaser.Game(config);
   
-
+// Exported Module so game can be initialized elseware
 const gameManager = {
   init: () => {
     input$.subscribe({
